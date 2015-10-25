@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/table_detail_fragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffe4e4e4">
+
+    <ImageView
+        android:id="@+id/detail_table_icon_image_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/icon_table"/>
+
+    <TextView
+        android:id="@+id/detail_table_bill_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:hint="@string/list_item_table_bill_hint"/>
+
+    <TextView
+        android:id="@+id/detail_table_name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/detail_table_icon_image_view"
+        android:layout_toEndOf="@id/detail_table_icon_image_view"
+        android:layout_toLeftOf="@id/detail_table_bill_text_view"
+        android:layout_toStartOf="@id/detail_table_bill_text_view"
+        android:paddingTop="6dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="0dp"
+        android:textColor="@android:color/black"
+        android:hint="@string/list_item_table_name"/>
+
+    <TextView
+        android:id="@+id/detail_table_course_number_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_table_name_text_view"
+        android:layout_toLeftOf="@id/detail_table_bill_text_view"
+        android:layout_toStartOf="@id/detail_table_bill_text_view"
+        android:layout_toRightOf="@id/detail_table_icon_image_view"
+        android:layout_toEndOf="@id/detail_table_icon_image_view"
+        android:textSize="14sp"
+        android:paddingBottom="10dp"
+        android:hint="@string/number_of_courses_hint"/>
+
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_below="@id/detail_table_course_number_text_view"
+                 android:background="#ffffffff">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/table_recycler_list"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/no_courses"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/no_courses_added"
+            android:gravity="center_horizontal|center_vertical"
+            android:textSize="20sp"/>
+
+    </FrameLayout>
+
+</RelativeLayout>

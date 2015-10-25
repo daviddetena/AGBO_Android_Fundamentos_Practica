@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CourseView">
+        <attr name="image" format="reference"/>
+        <attr name="name" format="string"/>
+        <attr name="description" format="string"/>
+        <attr name="allergens" format="string"/>
+        <attr name="price" format="float"/>
+        <attr name="notes" format="string"/>
+    </declare-styleable>
+</resources>
