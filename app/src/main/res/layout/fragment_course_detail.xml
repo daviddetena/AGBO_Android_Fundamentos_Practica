@@ -95,48 +95,62 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginRight="3dp"
-                    android:contentDescription="@string/course_has_peanuts"/>
+                    android:contentDescription="@string/course_has_peanuts"
+                    android:visibility="gone"
+                    android:src="@drawable/frutos_secos"/>
 
                 <ImageView
                     android:id="@+id/fragment_course_has_mustard"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginRight="3dp"
-                    android:contentDescription="@string/course_has_mustard"/>
+                    android:contentDescription="@string/course_has_mustard"
+                    android:visibility="gone"
+                    android:src="@drawable/mostaza"/>
 
                 <ImageView
                     android:id="@+id/fragment_course_has_gluten"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginRight="3dp"
-                    android:contentDescription="@string/course_has_gluten"/>
+                    android:contentDescription="@string/course_has_gluten"
+                    android:visibility="gone"
+                    android:src="@drawable/gluten"/>
 
                 <ImageView
                     android:id="@+id/fragment_course_has_fish"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginRight="3dp"
-                    android:contentDescription="@string/course_has_fish"/>
+                    android:contentDescription="@string/course_has_fish"
+                    android:visibility="gone"
+                    android:src="@drawable/pescado"/>
 
                 <ImageView
                     android:id="@+id/fragment_course_has_shellfish"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginRight="3dp"
-                    android:contentDescription="@string/course_has_shellfish"/>
+                    android:contentDescription="@string/course_has_shellfish"
+                    android:visibility="gone"
+                    android:src="@drawable/marisco"/>
 
                 <ImageView
                     android:id="@+id/fragment_course_has_egg"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginRight="3dp"
-                    android:contentDescription="@string/course_has_egg"/>
+                    android:contentDescription="@string/course_has_egg"
+                    android:visibility="gone"
+                    android:src="@drawable/huevo"/>
 
                 <ImageView
                     android:id="@+id/fragment_course_has_milk"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:contentDescription="@string/course_has_milk"/>
+                    android:contentDescription="@string/course_has_milk"
+                    android:visibility="gone"
+                    android:src="@drawable/lactosa"/>
 
             </LinearLayout>
 

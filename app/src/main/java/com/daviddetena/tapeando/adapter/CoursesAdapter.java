@@ -98,7 +98,7 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.CoursesV
             mCourseView.setCourseAllergens(course.getAllergensString());
 
             ImageDownloader.ImageDownloaderParams params = new ImageDownloader.ImageDownloaderParams(course.getPhotoUrl(), course.getPhoto());
-            ImageDownloader imageDownloader = new ImageDownloader(mContext, mCourseView.getCourseImageView(), R.drawable.no_image);
+            ImageDownloader imageDownloader = new ImageDownloader(mContext, mCourseView.getCourseImageView(), R.drawable.icon_course);
             imageDownloader.execute(params);
         }
 

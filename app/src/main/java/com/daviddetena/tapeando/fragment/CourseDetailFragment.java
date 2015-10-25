@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.daviddetena.tapeando.R;
+import com.daviddetena.tapeando.model.Allergen;
 import com.daviddetena.tapeando.model.Course;
 import com.daviddetena.tapeando.network.ImageDownloader;
 
@@ -30,10 +31,17 @@ public class CourseDetailFragment extends Fragment{
     private Course mCourse;
 
     private TextView mCourseTitle;
-    private ImageView mCourseImage;
     private TextView mCourseAllergens;
     private TextView mCourseDescription;
     private TextView mCourseNotes;
+    private ImageView mCourseImage;
+    private ImageView mCoursePeanutsImage;
+    private ImageView mCourseMustardImage;
+    private ImageView mCourseGlutenImage;
+    private ImageView mCourseFishImage;
+    private ImageView mCourseShellfishImage;
+    private ImageView mCourseEggImage;
+    private ImageView mCourseMilkImage;
 
     public static CourseDetailFragment newInstance(Course course) {
         CourseDetailFragment fragment = new CourseDetailFragment();
@@ -71,10 +79,24 @@ public class CourseDetailFragment extends Fragment{
         mCourseDescription = (TextView) root.findViewById(R.id.course_detail_description);
         mCourseNotes = (TextView) root.findViewById(R.id.course_detail_notes);
 
+        // Allergens images
+        mCoursePeanutsImage = (ImageView) root.findViewById(R.id.fragment_course_has_peanuts);
+        mCourseMustardImage = (ImageView) root.findViewById(R.id.fragment_course_has_mustard);
+        mCourseGlutenImage = (ImageView) root.findViewById(R.id.fragment_course_has_gluten);
+        mCourseFishImage = (ImageView) root.findViewById(R.id.fragment_course_has_fish);
+        mCourseShellfishImage = (ImageView) root.findViewById(R.id.fragment_course_has_shellfish);
+        mCourseEggImage = (ImageView) root.findViewById(R.id.fragment_course_has_egg);
+        mCourseMilkImage = (ImageView) root.findViewById(R.id.fragment_course_has_milk);
+
+        // Set allergens vissible (if needed)
+        setAllergensVisibility();
+
+
         mCourseTitle.setText(mCourse.getName());
         mCourseAllergens.setText(mCourse.getAllergensString());
         mCourseDescription.setText(mCourse.getDescription());
         mCourseNotes.setText(mCourse.getNotes());
+
 
         mCourseNotes.addTextChangedListener(new TextWatcher() {
             @Override
@@ -101,12 +123,43 @@ public class CourseDetailFragment extends Fragment{
         ImageDownloader imageDownloader = new ImageDownloader(getActivity(), mCourseImage, R.drawable.icon_course);
         imageDownloader.execute(params);
 
-        /*
-        final ArrayAdapter<Ingredient> adapter = new ArrayAdapter<>(getActivity(), R.layout.list_item_ingredient, mCourse.getIngredients());
-        mIngredientsList.setAdapter(adapter);
-        */
-
         return root;
+    }
+
+    private void setAllergensVisibility() {
+        if(mCourse.getAllergens().size()>0){
+            for (Allergen allergen:mCourse.getAllergens()) {
+                switch (allergen.getName()){
+                    case "Frutos Secos":
+                        mCoursePeanutsImage.setVisibility(View.VISIBLE);
+                        break;
+
+                    case "Mostaza":
+                        mCourseMustardImage.setVisibility(View.VISIBLE);
+                        break;
+
+                    case "Gluten":
+                        mCourseGlutenImage.setVisibility(View.VISIBLE);
+                        break;
+
+                    case "Pescado":
+                        mCourseFishImage.setVisibility(View.VISIBLE);
+                        break;
+
+                    case "Marisco":
+                        mCourseShellfishImage.setVisibility(View.VISIBLE);
+                        break;
+
+                    case "Huevo":
+                        mCourseEggImage.setVisibility(View.VISIBLE);
+                        break;
+
+                    case "Lactosa":
+                        mCourseMilkImage.setVisibility(View.VISIBLE);
+                        break;
+                }
+            }
+        }
     }
 
     @Override

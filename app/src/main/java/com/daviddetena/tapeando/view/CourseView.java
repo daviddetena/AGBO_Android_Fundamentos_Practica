@@ -49,7 +49,7 @@ public class CourseView extends CardView{
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CourseView, 0, 0);
         if (a != null) {
-            mCourseImage = a.getInt(R.styleable.CourseView_image, R.drawable.no_image);
+            mCourseImage = a.getInt(R.styleable.CourseView_image, R.drawable.icon_course);
             mCourseDescription = a.getString(R.styleable.CourseView_description);
             mCoursePrice = a.getFloat(R.styleable.CourseView_price, 0);
             mCourseName = a.getString(R.styleable.CourseView_name);
