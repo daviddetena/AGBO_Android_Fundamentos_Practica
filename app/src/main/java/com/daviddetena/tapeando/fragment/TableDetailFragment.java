@@ -78,11 +78,6 @@ public class TableDetailFragment extends Fragment implements CoursesAdapter.OnCo
             mCourseList.setLayoutManager(new LinearLayoutManager(getActivity()));
             mCourseList.setItemAnimator(new DefaultItemAnimator());
         }
-        else if (root.findViewById(R.id.table_recycler_grid_2) != null){
-            mCourseList = (RecyclerView) root.findViewById(R.id.table_recycler_grid_2);
-            mCourseList.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-            mCourseList.setItemAnimator(new DefaultItemAnimator());
-        }
 
         // Get resources from layout
         mTableNameTextView = (TextView) root.findViewById(R.id.detail_table_name_text_view);

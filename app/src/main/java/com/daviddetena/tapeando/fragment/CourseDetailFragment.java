@@ -73,11 +73,11 @@ public class CourseDetailFragment extends Fragment{
         super.onCreateView(inflater, container, savedInstanceState);
         View root = inflater.inflate(R.layout.fragment_course_detail, container, false);
 
-        mCourseTitle = (TextView) root.findViewById(R.id.course_detail_title);
-        mCourseImage = (ImageView) root.findViewById(R.id.course_detail_image);
-        mCourseAllergens = (TextView) root.findViewById(R.id.course_detail_allergens);
-        mCourseDescription = (TextView) root.findViewById(R.id.course_detail_description);
-        mCourseNotes = (TextView) root.findViewById(R.id.course_detail_notes);
+        mCourseTitle = (TextView) root.findViewById(R.id.fragment_course_name_text_view);
+        mCourseImage = (ImageView) root.findViewById(R.id.fragment_course_photo_image_view);
+        mCourseAllergens = (TextView) root.findViewById(R.id.fragment_course_allergens_text_view);
+        mCourseDescription = (TextView) root.findViewById(R.id.fragment_course_description_text_view);
+        mCourseNotes = (TextView) root.findViewById(R.id.fragment_course_notes_edit_text);
 
         // Allergens images
         mCoursePeanutsImage = (ImageView) root.findViewById(R.id.fragment_course_has_peanuts);
